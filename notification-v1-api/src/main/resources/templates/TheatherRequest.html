@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f7fa;
+            color: #333;
+            padding: 20px;
+        }
+
+        .container {
+            background-color: #ffffff;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: auto;
+        }
+
+        h2 {
+            color: #2c3e50;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        .details {
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #f0f3f5;
+            border-left: 4px solid #3498db;
+        }
+
+        .button {
+            background-color: #27ae60;
+            color: white;
+            padding: 12px 25px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+
+        .button.reject {
+            background-color: #e74c3c;
+        }
+
+        .footer {
+            margin-top: 30px;
+            font-size: 14px;
+            color: #999;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2>Hello [[${adminName}]],</h2>
+
+    <p>A new theater has registered and is awaiting your approval.</p>
+
+    <div class="details">
+        <p><strong>Theater Name:</strong> [[${theaterName}]]</p>
+        <p><strong>Address:</strong> [[${address}]], [[${state}]] - [[${pincode}]]</p>
+        <p><strong>Owner:</strong> [[${ownerName}]] [[${ownerEmail}]]</p>
+    </div>
+
+    <p>Please take an action:</p>
+
+    <form th:action="@{${acceptEndpoint}}" method="get">
+        <button type="submit" class="btn accept-btn">Accept Order</button>
+    </form>
+    <a href="${rejectUrl}" class="button reject">Reject</a>
+
+    <div class="footer">
+        <p>This is an automated notification from the BookMyShow system.</p>
+    </div>
+</div>
+</body>
+</html>

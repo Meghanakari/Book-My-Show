@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Theater Approval Confirmation</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f7fa;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            max-width: 600px;
+            margin: auto;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #2c3e50;
+        }
+
+        .details {
+            margin: 20px 0;
+            padding: 20px;
+            background-color: #eef3f7;
+            border-left: 4px solid #2ecc71;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .footer {
+            margin-top: 30px;
+            font-size: 14px;
+            color: #888;
+            text-align: center;
+        }
+
+        .label {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2>Theater Approval Successful 🎉</h2>
+
+    <p>Dear <span>[[${ownerName}]]</span></p>
+
+    <p>Your theater registration has been successfully <strong>approved</strong> by admin
+        <span>[[${adminName}]]</span></p>
+
+    <div class="details">
+        <p><span class="label">Theater Name:</span><span>[[${theatherName}]]</span></p>
+        <p><span class="label">Address:</span> <span>[[${address}]]</span></p>
+        <p><span class="label">State:</span> <span>[[${state}]]</span></p>
+        <p><span class="label">Pincode:</span> <span>[[${pincode}]]</span></p>
+    </div>
+
+    <p>You can now proceed to add halls and shows to your theater.</p>
+
+    <div class="footer">
+        <p>This is an automated message. Please do not reply.</p>
+    </div>
+</div>
+</body>
+</html>
