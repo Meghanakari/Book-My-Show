@@ -68,4 +68,3 @@ public abstract class RestAPI {
         return response.getBody();
     }
 }
-
