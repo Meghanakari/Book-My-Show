@@ -1,22 +1,14 @@
-package com.bms.authentication_api_v1.model;
+package com.bms.authentication_api_v1.responsebody;
 
-import lombok.*;
-
-import java.util.UUID;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Getter
 @Setter
-@AllArgsConstructor
 @NoArgsConstructor
-@ToString
-public class AppUser {
-    UUID id; // Base64
-    String name;
-    String email;
-    String password;
-    Long phoneNumber;
-    String address;
-    String state;
-    int pincode;
-    String userType;
+@AllArgsConstructor
+public class SuccessResponseBody {
+    String status;
 }
